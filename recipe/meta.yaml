@@ -1,5 +1,5 @@
 {% set name = "tscv" %}
-{% set version = "0.1.2" %}
+{% set version = "0.1.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 47b5852a6cea6d44711820327c3ade708b171debf1642137f9f77cd7bb088de1
+  sha256: 4934fcc9d5210d0bc4efcade76c195be2fb10bed82c827b05ac39953ef4dddc9
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -31,14 +31,14 @@ test:
   source_files:
     - tscv/tests
   commands:
-    - pytest     
+    - pytest
 
 about:
   home: https://github.com/WenjieZ/TSCV
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'Time Series Cross-Validation -- an extension for scikit-learn'
+  summary: Time Series Cross-Validation -- an extension for scikit-learn
   description: |
     This repository is a scikit-learn extension for time series cross-validation.
     It introduces gaps between the training set and the test set,
@@ -48,4 +48,4 @@ about:
 
 extra:
   recipe-maintainers:
-    - WenjieZ 
+    - WenjieZ
